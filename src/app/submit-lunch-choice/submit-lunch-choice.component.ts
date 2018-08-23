@@ -11,7 +11,7 @@ import { MatSnackBar } from '@angular/material';
 })
 export class SubmitLunchChoiceComponent implements OnInit {
 
-  lunchChoice: string = ''';
+  lunchChoice: string = '';
   lunchSent: boolean = false;
 
   constructor(private lunchService: LunchService, matSnackBar: MatSnackBar) { }
@@ -22,9 +22,10 @@ export class SubmitLunchChoiceComponent implements OnInit {
   submitLunchChoice(){
     let lunchMessage: LunchMessage = new LunchMessage();
     lunchMessage.message = this.lunchChoice;
-    this.lunchService.sendLunchMenu(lunchMessage).subscribe((any) => {this.snackBar.open('Done', '', {
-                                                                            duration: 2000,
-    });
+    this.lunchService.sendLunchMenu(lunchMessage).subscribe(
+    (any) => {this.matSnackBar.open('Done', '', {
+      duration: 2000,
+      });
     });
   }
 

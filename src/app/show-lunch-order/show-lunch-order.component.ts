@@ -34,6 +34,10 @@ export class ShowLunchOrderComponent implements OnInit {
     this.ngOnInit();
   }
 
+  sendReminder(){
+      this.lunchService.sendReminder().subscribe(()=> console.log('reminder sent'));
+  }
+
   private checkEmptyTable(){
     if(this.currentOrderList.length !== 0){
       this.emptyTable = false;

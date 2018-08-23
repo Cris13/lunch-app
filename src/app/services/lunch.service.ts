@@ -27,6 +27,10 @@ export class LunchService {
     return this.http.post<any>('http://localhost:8080/menu', message, httpOptions);
   }
 
+  sendReminder():Observable<string[]>{
+    return this.http.get<string[]>('http://localhost:8080/reminder',httpOptions);
+  }
+
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 

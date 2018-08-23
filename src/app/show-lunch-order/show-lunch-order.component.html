@@ -1,7 +1,7 @@
 <mat-card>
   <div>
     <button class="align-right" mat-raised-button (click)="downloadCSV()" >Download</button>
-    <button class="align-right" mat-raised-button >Send Reminder</button>
+    <button class="align-right" mat-raised-button (click)="sendReminder()">Send Reminder</button>
     <button class="align-right" mat-raised-button (click)="refresh()">Refresh</button>
   </div>
   <div class="no-orders" *ngIf="emptyTable">
