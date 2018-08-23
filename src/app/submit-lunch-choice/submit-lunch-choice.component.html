@@ -1,0 +1,8 @@
+<div>
+  <form>
+    <mat-form-field>
+      <input matInput  [(ngModel)]="lunchChoice" placeholder="Please insert the lunch choice for today" [ngModelOptions]="{standalone: true}"/>
+    </mat-form-field>
+    <button mat-raised-button  (click)="submitLunchChoice()" [disabled]="submitting">Send Lunch Choice</button>
+  </form>
+</div>
