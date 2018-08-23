@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Order } from '../model/order';
+import { LunchMessage } from '../model/lunch-message';
+import { LunchService } from '../services/lunch.service';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-submit-lunch-choice',
@@ -7,15 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubmitLunchChoiceComponent implements OnInit {
 
-  lunchChoice: string;
+  lunchChoice: string = ''';
+  lunchSent: boolean = false;
 
-  constructor() { }
+  constructor(private lunchService: LunchService, matSnackBar: MatSnackBar) { }
 
   ngOnInit() {
   }
 
   submitLunchChoice(){
-    console.log('submitted');
+    let lunchMessage: LunchMessage = new LunchMessage();
+    lunchMessage.message = this.lunchChoice;
+    this.lunchService.sendLunchMenu(lunchMessage).subscribe((any) => {this.snackBar.open('Done', '', {
+                                                                            duration: 2000,
+    });
+    });
   }
 
 }

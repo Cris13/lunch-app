@@ -23,7 +23,7 @@ export class ShowLunchOrderComponent implements OnInit {
       this.currentOrderList = orders;
       this.checkEmptyTable();
       console.log(this.currentOrderList);
-    }
+    },
     (error)=>{
       this.checkEmptyTable();
       console.log('there was an error');

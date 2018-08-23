@@ -4,6 +4,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
+import { Order } from '../model/order';
+import { LunchMessage } from '../model/lunch-message';
 import { ORDERS } from '../model/order-mock';
 
 const httpOptions = {
@@ -18,8 +20,11 @@ export class LunchService {
   constructor(private http: HttpClient) { }
 
   getOrders(): Observable<Order[]>{
-    //return this.http.get<Order[]>('http://localhost:8080/orders',httpOptions).pipe(catchError(this.handleError('getOrders', [])));
-    return of(ORDERS);
+    return this.http.get<Order[]>('http://localhost:8080/orders',httpOptions);
+  }
+
+  sendLunchMenu(message: LunchMessage): Observable<any>{
+    return this.http.post<any>('http://localhost:8080/menu', message, httpOptions);
   }
 
   private handleError<T> (operation = 'operation', result?: T) {

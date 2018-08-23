@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCardModule,  MatDividerModule, MatInputModule, MatListModule,  MatTableModule, MatTabsModule, MatToolbarModule } from '@angular/material';
+import { MatButtonModule, MatCardModule,  MatDividerModule, MatInputModule, MatListModule, MatSnackBarModule, MatTableModule, MatTabsModule, MatToolbarModule } from '@angular/material';
+import {MatIconModule} from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -22,8 +23,10 @@ import { ShowLunchOrderComponent } from './show-lunch-order/show-lunch-order.com
      MatButtonModule,
      MatCardModule,
      MatDividerModule,
+     MatIconModule,
      MatInputModule,
      MatListModule,
+     MatSnackBarModule,
      MatTableModule,
      MatTabsModule,
      MatToolbarModule,
