@@ -19,7 +19,7 @@ export class LunchService {
 
   getOrders(): Observable<Order[]>{
     //return this.http.get<Order[]>('http://localhost:8080/orders',httpOptions).pipe(catchError(this.handleError('getOrders', [])));
-    return of([])
+    return of(ORDERS);
   }
 
   private handleError<T> (operation = 'operation', result?: T) {

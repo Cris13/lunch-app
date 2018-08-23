@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from '../model/order';
 import { LunchService } from '../services/lunch.service';
+import { Angular5Csv } from 'angular5-csv/Angular5-csv';
 
 @Component({
   selector: 'app-show-lunch-order',
@@ -39,15 +40,11 @@ export class ShowLunchOrderComponent implements OnInit {
     }
   }
 
-  download(): void{
-        let sJson = JSON.stringify(this.currentOrderList);
-        let element = document.createElement('a');
-        element.setAttribute('href', "data:text/json;charset=UTF-8," + encodeURIComponent(sJson));
-        element.setAttribute('download', "order.txt");
-        element.style.display = 'none';
-        document.body.appendChild(element);
-        element.click();
-        document.body.removeChild(element);
+  downloadCSV():void{
+    let date = new Date();
+    let month: number = date.getMonth();
+    let dateString: string = date.getDate() + '-' + (month + 1) + '-' + date.getFullYear();
+    new Angular5Csv(this.currentOrderList, 'Order-' + dateString + '.txt');
   }
 
 }
