@@ -20,15 +20,15 @@ export class LunchService {
   constructor(private http: HttpClient) { }
 
   getOrders(): Observable<Order[]>{
-    return this.http.get<Order[]>('http://localhost:8080/orders',httpOptions);
+    return this.http.get<Order[]>('http://localhost:8888/orders',httpOptions);
   }
 
   sendLunchMenu(message: LunchMessage): Observable<any>{
-    return this.http.post<any>('http://localhost:8080/menu', message, httpOptions);
+    return this.http.post<any>('http://localhost:8888/menu', message, httpOptions);
   }
 
   sendReminder():Observable<string[]>{
-    return this.http.get<string[]>('http://localhost:8080/reminder',httpOptions);
+    return this.http.get<string[]>('http://localhost:8888/reminder',httpOptions);
   }
 
   private handleError<T> (operation = 'operation', result?: T) {

@@ -14,7 +14,7 @@ export class SubmitLunchChoiceComponent implements OnInit {
   lunchChoice: string = '';
   lunchSent: boolean = false;
 
-  constructor(private lunchService: LunchService, matSnackBar: MatSnackBar) { }
+  constructor(private lunchService: LunchService, private matSnackBar: MatSnackBar) { }
 
   ngOnInit() {
   }
@@ -26,6 +26,7 @@ export class SubmitLunchChoiceComponent implements OnInit {
     (any) => {this.matSnackBar.open('Done', '', {
       duration: 2000,
       });
+      this.lunchChoice = '';
     });
   }
 
