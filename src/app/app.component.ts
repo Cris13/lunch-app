@@ -10,5 +10,5 @@ export class AppComponent {
 }
 
 function smell() {
-  let a = <AppComponent> null;
+  if (1 == 1) { let a = "smell"; }
 }
