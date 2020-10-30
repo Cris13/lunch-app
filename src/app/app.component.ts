@@ -9,6 +9,6 @@ export class AppComponent {
   title = 'lunch-app';
 }
 
-function smell() {
-  if (1 == 1) { let a = "smell"; }
+function smell(n) {
+  if (n == 1) { let a = "smell"; }
 }
