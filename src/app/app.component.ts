@@ -8,3 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'lunch-app';
 }
+
+function smell() {
+  let a = <AppComponent> null;
+}
